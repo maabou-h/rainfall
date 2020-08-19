@@ -2,7 +2,6 @@
 void	p()
 {
 	char buf[68];
-
 	gets(buf);
 	// ...
 

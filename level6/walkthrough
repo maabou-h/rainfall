@@ -62,6 +62,7 @@ Program received signal SIGSEGV, Segmentation fault.
 0x41414141 in ?? ()
 
 segfaults and rewrites eip at 72 byte offset
+so we rewrite the address of n over the EIP
 
 (gdb) info functions
 All defined functions:

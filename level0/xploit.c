@@ -10,10 +10,7 @@ int main(int ac, char **av)
         char *shell = strdup("/bin/sh");
         gid_t gid = getegid();
         uid_t uid = geteuid();
-        char *args[2] = {
-            "sh",
-            0
-        };
+        char *args[2] = {"sh",0};
         execv(shell, args);
     }
     else

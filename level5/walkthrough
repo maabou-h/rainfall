@@ -47,6 +47,12 @@
  804851e:	90                   	nop
  804851f:	90                   	nop
 
+trouvons l'addresse du exit qui est apelé a la fin de n afin d'y mettre l'adresse de o a la place
+grace au undefined behaviour du printf avec %x$n, ou x est le numero de la variable a utiliser,
+comme on voit que printf pop les arguments de la stack et qu'on peut reecrire sur la 4e addresse, on y met
+l'addresse du exit et on reecrit x caracteres pour que le %hn reecrive cette valeur de nombres de caracteres
+ecrits par le printf sur les 4 bits faibles de l'addresse du exit, pour correspondre a l'addresse de o
+
 level5@RainFall:~$ objdump --dynamic-reloc level5
 
 level5:     file format elf32-i386
