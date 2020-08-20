@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(int ac, char **av)
+int	main(ac, av)
+	int ac;
+	char **av;
 {
     if (atoi(av[1]) == 423)
     {

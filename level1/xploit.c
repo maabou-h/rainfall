@@ -7,7 +7,9 @@ void run(void)
     system("/bin/sh");
 }
 
-int main(int ac, char **av)
+int	main(ac, av)
+	int ac;
+	char **av;
 {
     gets(64);
     return (0);

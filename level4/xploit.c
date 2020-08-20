@@ -1,18 +1,18 @@
+int m = 0;
+
 void p(char *buffer)
 {
-	printf("%s\n", buffer);
+	printf(buffer);
 }
 
 void n()
 {
-	int m = 0;
 	char buffer[256];
-
-	buffer = fgets(buffer, 56, 1);
+	fgets(buffer, 56, 1);
 	p(buffer);
 	if (m == 16930116)
 	{
-		system(" && cat /home/user/level5/.pass");
+		system("/bin/cat /home/user/level5/.pass");
 	}
 }
 

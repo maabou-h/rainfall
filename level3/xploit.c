@@ -1,14 +1,13 @@
+int m = 0;
 
 void v()
 {
-	int m = 0;
 	char buffer[256];
-
-	fgets(buffer, 256, 1);
+	fgets(buffer, 256, 0);
 	printf("%s\n", buffer);
 	if (m == 64)
 	{
-		fwrite();
+		fwrite("Wait what?!\n", 1, 12, 1);
 		system("/bin/sh");
 	}
 }

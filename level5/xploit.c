@@ -1,15 +1,14 @@
 void o()
 {
-	system();
-	exit(0);
+	system("/bin/sh");
+	_exit(0);
 }
 
 void n()
 {
 	char buffer[256];
-
-	buffer = fgets(buffer, 256, 1);
-	printf("%s\n", buffer);
+	fgets(buffer, 256, 1);
+	printf(buffer);
 	exit(0);
 }
 
