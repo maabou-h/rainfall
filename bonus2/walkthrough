@@ -150,17 +150,14 @@ End of assembler dump.
 Starting program: /home/user/bonus2/bonus2 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa a
 Hello aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 [Inferior 1 (process 2962) exited with code 060]
-(gdb) info strings
-Undefined info command: "strings".  Try "help info".
 (gdb) x/s 0x8049988
 0x8049988 <language>:    ""
 (gdb) x/s 0x8048740
 0x8048740:       "nl"
 (gdb) q
-bonus2@RainFall:~$ encho $LANG
-No command 'encho' found, did you mean:
- Command 'echo' from package 'coreutils' (main)
-encho: command not found
+
+on va tester si c'est bien la variable d'env LANG qui est utilisee
+
 bonus2@RainFall:~$ echo $LANG
 en_US.UTF-8
 bonus2@RainFall:~$ export LANG=nl

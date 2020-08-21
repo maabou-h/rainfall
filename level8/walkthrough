@@ -28,8 +28,8 @@ login
 Password:
 ;*2$"(
 
-
-
+// on peut voir que un prrintf imprime les addresses des variables auth et service, on tente login car une variable s'appelle comme ca
+// et puis on nous demande un password, on tente reset qui est une autre variable, puis on retente les autres et cela nous ouvre un shell
 
 level8@RainFall:~$ ./level8
 (nil), (nil)

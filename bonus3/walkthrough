@@ -93,7 +93,8 @@ End of assembler dump.
 (gdb) x/s 0x80486f2
 0x80486f2:       "/home/user/end/.pass"
 
-we know it'll open the pass file of end user with an fread and execute a shell in a certain condition
+we know it'll execl a shell in the condition that the strcmp of the two strings match
+and that it does an atoi on the first string
 
 bonus3@RainFall:~$ ./bonus3
 bonus3@RainFall:~$ ./bonus3 a

